@@ -1,24 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Fixtures {
 
     private Team teams;
-    private Groups groups;
+    private ArrayList<Integer> listOfTeams;
+    private int groupSize = 4;
 
 
-    public Fixtures(Team teams, Groups groups) {
+    public Fixtures(Team teams) {
         this.teams = teams;
-        this.groups = groups;
     }
 
-
-    public void splitTeamsIntoGroups(){
-        groups.listOfGroups();
+    public void addTeamIdentifiersToList() {
         teams.listOfTeams();
-        // iterate through listOfTeams and put them into the createGroupsOfFour groups
-
-        // e.g. groupA[0] = listOfTeams.Random
+        for (int i : teams.tournamentTeams.keySet()) {
+            listOfTeams.add(i);
+        }
     }
 
+    public void splitTeamsIntoGroups() {
+        addTeamIdentifiersToList();
+        Collections.shuffle(listOfTeams);
 
+        for(int i=0;i<listOfTeams.size();i+=groupSize){
+            System.out.println(Arrays.toString(Arrays.copyOfRange(new ArrayList[]{listOfTeams}, i, Math.min(listOfTeams.size(),i+groupSize))));
+        }
 
-
+    }
 }

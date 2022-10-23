@@ -1,11 +1,9 @@
 public class Venue {
 
-    private String venue;
-    private String year;
-    private String stadium;
-    private int capacity;
-
-    // Qatar 2022, Qatar Foundation Stadium, capacity: 40,000,
+    private final String venue;
+    private final String year;
+    private final String stadium;
+    private final int capacity;
 
     public Venue(String venue, String year, String stadium, int capacity) {
         this.venue = venue;

@@ -12,8 +12,4 @@ public class Groups {
         int[] groupH = new int[3];
 
     }
-
-
-
-
 }
